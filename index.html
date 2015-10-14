@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annuario Statistico</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="fonts/flaticons/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/fonts/flaticons/flaticon.css" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="js/plugins/amcharts/plugins/export/export.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/js/plugins/amcharts/plugins/export/export.css" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
     <!-- Custom style -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -35,11 +35,11 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-content text-center mini" style="border-radius:5px">
-                            <span class="text-navy flaticon-file148" aria-hidden="true"></span>
+                            <span class="text-lazur flaticon-file148" aria-hidden="true"></span>
 
-                            <h1 class="text-navy">Annuario Statistico</h1>
+                            <h1 class="text-lazur">Annuario Statistico</h1>
 
-                            <h2>Statistiche e metriche sulla città di Treviso</h2>
+                            <h2>Statistiche e Metriche sulla Città di Treviso</h2>
                         </div>
                     </div>
                 </div>
@@ -121,26 +121,27 @@
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Piramide d'età del Comune di Treviso</h5>
+                            <h5>Piramide d'età - Comune di Treviso</h5>
 
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="populationPyramid"></div>
+                            <div class="chart" id="chart1"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Popolazione suddivisa per stato civile</h5>
+                            <h5>Piramide d'età - Centro Storico</h5>
 
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="maritalStatusPie"></div>
+                            <div class="chart" id="chart2"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="row">
                 <div class="col-lg-6 animated fadeInLeft">
@@ -149,7 +150,7 @@
                             <h5>Popolazione del Comune di Treviso</h5>
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="populationSerial"></div>
+                            <div class="chart" id="chart3"></div>
                         </div>
                     </div>
                 </div>
@@ -160,7 +161,7 @@
 
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="familiesSerial"></div>
+                            <div class="chart" id="chart4"></div>
                         </div>
                     </div>
                 </div>
@@ -171,132 +172,20 @@
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Andamento dei nati e dei morti</h5>
+                            <h5>Popolazione suddivisa per Stato Civile</h5>
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="birthsDeathsSerial"></div>
+                            <div class="chart" id="chart5"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Andamento degli immigrati e degli emigrati</h5>
-                        </div>
-                        <div class="ibox-content">
-                            <div class="chart" id="migrationTrendSerial"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Indice di vecchiaia</h5>
-
-                        </div>
-                        <div class="ibox-content text-center">
-                            <div class="gauge" id="g1"></div>
-                            <div class="gauge" id="g2"></div>
-                            <div class="gauge" id="g3"></div>
-                            <p>Rapporto percentuale tra la popolazione di 65 anni e pi&ugrave; e la popolazione di et&agrave; 0-14 anni; indica il numero degli anziani ogni 100 giovani</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Indice di dipendenza</h5>
-
-                        </div>
-                        <div class="ibox-content  text-center">
-                            <div class="gauge" id="g4"></div>
-                            <div class="gauge" id="g5"></div>
-                            <div class="gauge" id="g6"></div>
-                            <p>Rapporto percentuale tra la popolazione non attiva (0-14 anni e oltre i 65 anni) e la popolazione attiva (15-64 anni)</p>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Censimenti della popolazione</h5>
-
-                        </div>
-                        <div class="ibox-content">
-                            <div class="chart" id="censusSerial"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Numero di componenti per famiglia</h5>
-
-                        </div>
-                        <div class="ibox-content">
-                            <div class="chart" id="famComSerial"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>Popolazione di Treviso, Veneto e Italia per particolari classi di età</h5>
-
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="agesSerial"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Decessi per sesso e classi di età</h5>
-
-                        </div>
-                        <div class="ibox-content">
-                            <div class="chart" id="deathsSexSerial"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Matrimoni secondo l'età degli sposi</h5>
-
-                        </div>
-                        <div class="ibox-content">
-                            <div class="chart" id="marriagesMPie"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 animated fadeInLeft">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Matrimoni secondo l'età delle spose</h5>
-
-                        </div>
-                        <div class="ibox-content">
-                            <div class="chart" id="marriagesFPie"></div>
+                            <div class="chart" id="chart6"></div>
                         </div>
                     </div>
                 </div>
@@ -307,22 +196,144 @@
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Piramide d'età della popolazione straniera</h5>
-
+                            <h5>Famiglie suddivise per Numero di Componenti - Comune di Treviso</h5>
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="foreignPyramid"></div>
+                            <div class="chart" id="chart7"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Immigrati nel Comune di Treviso per Stato di provenienza</h5>
+                            <h5>Famiglie suddivise per Numero di Componenti - Centro Storico</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Popolazione Distribuita per Classi di Età - Comune</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart9"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Popolazione Distribuita per Classi di Età - Centro</h5>
 
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="foreignStateMap"></div>
+                            <div class="chart" id="chart10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Matrimoni suddivisi per Età degli Sposi</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart18"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Matrimoni suddivisi per Età degli Spose</h5>
+
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart19"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Decessi per Sesso e Classi di Età</h5>
+
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart11"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Piramide d'età della Polazione Straniera</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart12"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Popolazione del Comune di Treviso ai Censimenti</h5>
+
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart13"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Andamento dei Nati e dei Morti</h5>
+
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart14"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Andamento degli Immigrati e degli Emigrati</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart15"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animated fadeInLeft">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Saldo Naturale</h5>
+
+                        </div>
+                        <div class="ibox-content">
+                            <div class="chart" id="chart16"></div>
                         </div>
                     </div>
                 </div>
@@ -333,11 +344,11 @@
                 <div class="col-lg-6 animated fadeInLeft">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Percentuali immigrati stranieri nel comune di Treviso divisi per quartiere</h5>
+                            <h5>Saldo Migratorio</h5>
 
                         </div>
                         <div class="ibox-content">
-                            <div class="chart" id="foreignAreaMap"></div>
+                            <div class="chart" id="chart17"></div>
                         </div>
                     </div>
                 </div>
@@ -346,9 +357,9 @@
                     <div class="jumbotron">
                         <h1>Nomi a Treviso</h1>
 
-                        <p>Quali sono i nomi più comuni a Treviso? Il tuo è abbastanza originale? Scoprilo in questa infografica interattiva.</p>
+                        <div class="lead">Quali sono i nomi più comuni a Treviso? Il tuo è abbastanza originale? Scoprilo in questa infografica interattiva.</divassets/>
 
-                        <p><a href="/names" target="_blank" class="btn btn-primary btn-lg" role="button">Vedi Infografica</a>
+                        <p><a href="/names" target="_blank" class="btn btn-info btn-lg" role="button">Vedi Infografica</a>
                         </p>
                     </div>
                 </div>
@@ -366,40 +377,40 @@
 
         <div class="footer">
             <div>
-                <strong>Copyright</strong> Comune di Treviso &copy; 2015-2016, realizzato da <a href="mailto:andreacasini88@gmail.com">Andrea Casini</a>, <a href="mailto:spano@unive.it">Alvise Spanò</a>
+                Realizzato da <a href="mailto:andreacasini88@gmail.com">Andrea Casini</a>, <a href="mailto:spano@unive.it">Alvise Spanò</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Mainly scripts -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
+<script src="assets/js/jquery-2.1.1.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/js/plugins/pace/pace.min.js"></script>
 
 <!-- AmCharts -->
-<script src="js/plugins/amcharts/amcharts.js"></script>
-<script src="js/plugins/amcharts/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
-<script src="js/plugins/amcharts/serial.js"></script>
-<script src="js/plugins/amcharts/pie.js"></script>
-<script src="js/plugins/amcharts/themes/light.js"></script>
-<script src="js/plugins/amcharts/plugins/export/export.js"></script>
-<script src="js/plugins/amcharts/lang/it.js"></script>
+<script src="assets/js/plugins/amcharts/amcharts.js"></script>
+<script src="assets/js/plugins/amcharts/plugins/dataloader/dataloader.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/amcharts/serial.js"></script>
+<script src="assets/js/plugins/amcharts/pie.js"></script>
+<script src="assets/js/plugins/amcharts/themes/light.js"></script>
+<script src="assets/js/plugins/amcharts/plugins/export/export.js"></script>
+<script src="assets/js/plugins/amcharts/lang/it.js"></script>
 
-<!-- AmMaps -->
+<!-- AmMaps
 <script src="js/plugins/ammap/ammap.js"></script>
 <script src="js/plugins/ammap/maps/js/worldLow.js"></script>
 <script src="js/plugins/ammap/maps/js/treviso.js"></script>
 <script src="js/plugins/ammap/plugins/dataloader/dataloader.js"></script>
-
+-->
 <!-- Gauges -->
-<script src="js/plugins/justgage/raphael.2.1.0.min.js"></script>
-<script src="js/plugins/justgage/justgage.1.0.1.min.js"></script>
+<script src="assets/js/plugins/justgage/raphael.2.1.0.min.js"></script>
+<script src="assets/js/plugins/justgage/justgage.1.0.1.min.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="js/common.js"></script>
-<script src="js/graphs.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/graphs.js"></script>
 
 </body>
 
