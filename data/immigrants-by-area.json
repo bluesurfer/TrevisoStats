@@ -1,0 +1,50 @@
+{
+  "map": "treviso",
+  "areas": [
+    {
+      "id": "1",
+      "title": "SS. Quaranta, Altinia",
+      "value": 11
+    },
+    {
+      "id": "2",
+      "title": "Oltre Cagnan",
+      "value": 16
+    },
+    {
+      "id": "3",
+      "title": "Fra' Giocondo",
+      "value": 14
+    },
+    {
+      "id": "4",
+      "title": "Fiera, Selvana",
+      "value": 12
+    },
+    {
+      "id": "5",
+      "title": "S.M. del Rovere, S.Artemio",
+      "value": 17
+    },
+    {
+      "id": "6",
+      "title": "S. Bona, S.Pelaio",
+      "value": 14
+    },
+    {
+      "id": "7",
+      "title": "Monigo, S. Liberale, S. Paolo, S. Giuseppe",
+      "value": 13
+    },
+    {
+      "id": "8",
+      "title": "S. Angelo, Canizzano",
+      "value": 9
+    },
+    {
+      "id": "9",
+      "title": "S. Zeno, S. Lazzaro, S. Antonino, Chiesa Votiva",
+      "value": 14
+    }
+  ]
+}

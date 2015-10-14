@@ -1,0 +1,62 @@
+{
+  "male": [
+    {
+      "age": "meno di 24",
+      "marriages": 10
+    },
+    {
+      "age": "25 - 29",
+      "marriages": 52
+    },
+    {
+      "age": "30 - 34",
+      "marriages": 97
+    },
+    {
+      "age": "35 - 39",
+      "marriages": 77
+    },
+    {
+      "age": "40 - 44",
+      "marriages": 50
+    },
+    {
+      "age": "45 - 49",
+      "marriages": 30
+    },
+    {
+      "age": "50 e oltre",
+      "marriages": 59
+    }
+  ],
+  "female": [
+    {
+      "age": "meno di 24",
+      "marriages": 20
+    },
+    {
+      "age": "25 - 29",
+      "marriages": 85
+    },
+    {
+      "age": "30 - 34",
+      "marriages": 102
+    },
+    {
+      "age": "35 - 39",
+      "marriages": 71
+    },
+    {
+      "age": "40 - 44",
+      "marriages": 40
+    },
+    {
+      "age": "45 - 49",
+      "marriages": 19
+    },
+    {
+      "age": "50 e oltre",
+      "marriages": 38
+    }
+  ]
+}

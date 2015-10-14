@@ -1,0 +1,322 @@
+[
+  {
+    "year": 1951,
+    "births": 1044,
+    "deaths": 615
+  },
+  {
+    "year": 1952,
+    "births": 1046,
+    "deaths": 647
+  },
+  {
+    "year": 1953,
+    "births": 1081,
+    "deaths": 611
+  },
+  {
+    "year": 1954,
+    "births": 1081,
+    "deaths": 582
+  },
+  {
+    "year": 1955,
+    "births": 1205,
+    "deaths": 640
+  },
+  {
+    "year": 1956,
+    "births": 1173,
+    "deaths": 717
+  },
+  {
+    "year": 1957,
+    "births": 1131,
+    "deaths": 672
+  },
+  {
+    "year": 1958,
+    "births": 1115,
+    "deaths": 612
+  },
+  {
+    "year": 1959,
+    "births": 1192,
+    "deaths": 660
+  },
+  {
+    "year": 1960,
+    "births": 1240,
+    "deaths": 792
+  },
+  {
+    "year": 1961,
+    "births": 1302,
+    "deaths": 715
+  },
+  {
+    "year": 1962,
+    "births": 1353,
+    "deaths": 723
+  },
+  {
+    "year": 1963,
+    "births": 1442,
+    "deaths": 830
+  },
+  {
+    "year": 1964,
+    "births": 1526,
+    "deaths": 746
+  },
+  {
+    "year": 1965,
+    "births": 1606,
+    "deaths": 849
+  },
+  {
+    "year": 1966,
+    "births": 1575,
+    "deaths": 791
+  },
+  {
+    "year": 1967,
+    "births": 1439,
+    "deaths": 768
+  },
+  {
+    "year": 1968,
+    "births": 1433,
+    "deaths": 886
+  },
+  {
+    "year": 1969,
+    "births": 1433,
+    "deaths": 862
+  },
+  {
+    "year": 1970,
+    "births": 1378,
+    "deaths": 801
+  },
+  {
+    "year": 1971,
+    "births": 1394,
+    "deaths": 804
+  },
+  {
+    "year": 1972,
+    "births": 1335,
+    "deaths": 790
+  },
+  {
+    "year": 1973,
+    "births": 1256,
+    "deaths": 907
+  },
+  {
+    "year": 1974,
+    "births": 1199,
+    "deaths": 859
+  },
+  {
+    "year": 1975,
+    "births": 994,
+    "deaths": 870
+  },
+  {
+    "year": 1976,
+    "births": 890,
+    "deaths": 913
+  },
+  {
+    "year": 1977,
+    "births": 884,
+    "deaths": 856
+  },
+  {
+    "year": 1978,
+    "births": 740,
+    "deaths": 890
+  },
+  {
+    "year": 1979,
+    "births": 724,
+    "deaths": 880
+  },
+  {
+    "year": 1980,
+    "births": 592,
+    "deaths": 912
+  },
+  {
+    "year": 1981,
+    "births": 592,
+    "deaths": 930
+  },
+  {
+    "year": 1982,
+    "births": 623,
+    "deaths": 903
+  },
+  {
+    "year": 1983,
+    "births": 563,
+    "deaths": 911
+  },
+  {
+    "year": 1984,
+    "births": 558,
+    "deaths": 865
+  },
+  {
+    "year": 1985,
+    "births": 564,
+    "deaths": 861
+  },
+  {
+    "year": 1986,
+    "births": 561,
+    "deaths": 893
+  },
+  {
+    "year": 1987,
+    "births": 548,
+    "deaths": 881
+  },
+  {
+    "year": 1988,
+    "births": 545,
+    "deaths": 906
+  },
+  {
+    "year": 1989,
+    "births": 588,
+    "deaths": 863
+  },
+  {
+    "year": 1990,
+    "births": 636,
+    "deaths": 918
+  },
+  {
+    "year": 1991,
+    "births": 587,
+    "deaths": 988
+  },
+  {
+    "year": 1992,
+    "births": 643,
+    "deaths": 897
+  },
+  {
+    "year": 1993,
+    "births": 622,
+    "deaths": 880
+  },
+  {
+    "year": 1994,
+    "births": 618,
+    "deaths": 925
+  },
+  {
+    "year": 1995,
+    "births": 653,
+    "deaths": 954
+  },
+  {
+    "year": 1996,
+    "births": 666,
+    "deaths": 873
+  },
+  {
+    "year": 1997,
+    "births": 611,
+    "deaths": 905
+  },
+  {
+    "year": 1998,
+    "births": 693,
+    "deaths": 965
+  },
+  {
+    "year": 1999,
+    "births": 637,
+    "deaths": 981
+  },
+  {
+    "year": 2000,
+    "births": 684,
+    "deaths": 909
+  },
+  {
+    "year": 2001,
+    "births": 663,
+    "deaths": 921
+  },
+  {
+    "year": 2002,
+    "births": 695,
+    "deaths": 856
+  },
+  {
+    "year": 2003,
+    "births": 732,
+    "deaths": 867
+  },
+  {
+    "year": 2004,
+    "births": 649,
+    "deaths": 854
+  },
+  {
+    "year": 2005,
+    "births": 704,
+    "deaths": 895
+  },
+  {
+    "year": 2006,
+    "births": 654,
+    "deaths": 836
+  },
+  {
+    "year": 2007,
+    "births": 713,
+    "deaths": 892
+  },
+  {
+    "year": 2008,
+    "births": 701,
+    "deaths": 917
+  },
+  {
+    "year": 2009,
+    "births": 626,
+    "deaths": 945
+  },
+  {
+    "year": 2010,
+    "births": 673,
+    "deaths": 926
+  },
+  {
+    "year": 2011,
+    "births": 621,
+    "deaths": 925
+  },
+  {
+    "year": 2012,
+    "births": 639,
+    "deaths": 941
+  },
+  {
+    "year": 2013,
+    "births": 604,
+    "deaths": 934
+  },
+  {
+    "year": 2014,
+    "births": 622,
+    "deaths": 885
+  }
+]
