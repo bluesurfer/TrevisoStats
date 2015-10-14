@@ -1,0 +1,20 @@
+[
+  {
+    "Classe di età": "0-14",
+    "Treviso": "12.50",
+    "Veneto": "14.10",
+    "Italia": "13.90"
+  },
+  {
+    "Classe di età": "15-64",
+    "Treviso": "61.80",
+    "Veneto": "64.60",
+    "Italia": "64.70"
+  },
+  {
+    "Classe di età": "65 e oltre",
+    "Treviso": "25.60",
+    "Veneto": "21.30",
+    "Italia": "21.40"
+  }
+]

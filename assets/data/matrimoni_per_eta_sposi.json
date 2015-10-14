@@ -1,0 +1,30 @@
+[
+  {
+    "età": "meno di 24",
+    "matrimoni": 10
+  },
+  {
+    "età": "25 - 29",
+    "matrimoni": 52
+  },
+  {
+    "età": "30 - 34",
+    "matrimoni": 97
+  },
+  {
+    "età": "35 - 39",
+    "matrimoni": 77
+  },
+  {
+    "età": "40 - 44",
+    "matrimoni": 50
+  },
+  {
+    "età": "45 - 49",
+    "matrimoni": 30
+  },
+  {
+    "età": "50 e oltre",
+    "matrimoni": 59
+  }
+]

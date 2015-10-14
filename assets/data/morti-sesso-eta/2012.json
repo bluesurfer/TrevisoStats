@@ -1,0 +1,22 @@
+ [
+  {
+    "età":"0-59",
+    "Maschi":39,
+    "Femmine":20
+  },
+  {
+    "età":"60-69",
+    "Maschi":44,
+    "Femmine":23
+  },
+  {
+    "età":"70-79",
+    "Maschi":93,
+    "Femmine":62
+  },
+  {
+    "età":"80 e oltre",
+    "Maschi":232,
+    "Femmine":428
+  }
+]

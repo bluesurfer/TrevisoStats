@@ -1,0 +1,92 @@
+[
+  {
+    "età":"oltre",
+    "Maschi":-4,
+    "Femmine":6
+  },
+  {
+    "età":"80 - 84",
+    "Maschi":-12,
+    "Femmine":8
+  },
+  {
+    "età":"75 - 79",
+    "Maschi":-9,
+    "Femmine":24
+  },
+  {
+    "età":"70 - 74",
+    "Maschi":-17,
+    "Femmine":38
+  },
+  {
+    "età":"65 - 69",
+    "Maschi":-25,
+    "Femmine":73
+  },
+  {
+    "età":"60 - 64",
+    "Maschi":-70,
+    "Femmine":127
+  },
+  {
+    "età":"55 - 59",
+    "Maschi":-150,
+    "Femmine":335
+  },
+  {
+    "età":"50 - 54",
+    "Maschi":-258,
+    "Femmine":470
+  },
+  {
+    "età":"45 - 49",
+    "Maschi":-444,
+    "Femmine":484
+  },
+  {
+    "età":"40 - 44",
+    "Maschi":-594,
+    "Femmine":616
+  },
+  {
+    "età":"35 - 39",
+    "Maschi":-623,
+    "Femmine":663
+  },
+  {
+    "età":"30 - 34",
+    "Maschi":-610,
+    "Femmine":648
+  },
+  {
+    "età":"25 - 29",
+    "Maschi":-464,
+    "Femmine":543
+  },
+  {
+    "età":"20 - 24",
+    "Maschi":-426,
+    "Femmine":413
+  },
+  {
+    "età":"15 - 19",
+    "Maschi":-314,
+    "Femmine":284
+  },
+  {
+    "età":"10 - 14",
+    "Maschi":-297,
+    "Femmine":285
+  },
+  {
+    "età":"5 - 9",
+    "Maschi":-396,
+    "Femmine":306
+  },
+  {
+    "età":"0 - 4",
+    "Maschi":-450,
+    "Femmine":438
+  }
+]
