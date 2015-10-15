@@ -386,7 +386,7 @@ body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
     margin: 1em;
 }
 
-p {
+.no-margins {
     font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;

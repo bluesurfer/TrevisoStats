@@ -1,4 +1,3 @@
-
 var dataPath = 'assets/data/';
 
 /* Piramide popolazione comune di Treviso
@@ -257,10 +256,10 @@ graphs = [
 ];
 
 urls = [
-    dataPath +"morti-sesso-eta/2011.json",
-    dataPath +"morti-sesso-eta/2012.json",
-    dataPath +"morti-sesso-eta/2013.json",
-    dataPath +"morti-sesso-eta/2014.json"
+    dataPath + "morti-sesso-eta/2011.json",
+    dataPath + "morti-sesso-eta/2012.json",
+    dataPath + "morti-sesso-eta/2013.json",
+    dataPath + "morti-sesso-eta/2014.json"
 ];
 
 generateSerial("chart11", urls, graphs, "età");
@@ -312,21 +311,47 @@ graphs = [
         "bulletBorderAlpha": 1,
         "lineThickness": 3,
         "lineColor": "#fc8d62",
-        "fillAlphas": 0.5,
         "bulletColor": "#FFFFFF",
         "hideBulletsCount": 50,
         "title": "Popolazione",
         "valueField": "popolazione",
-        "useLineColorForBulletBorder": true
+        "useLineColorForBulletBorder": true,
+        "fillAlphas": 0.5
     }
 ];
 
 
 urls = [
-    dataPath + "censimenti.json"
+    dataPath + "censimenti_comune.json"
 ];
 
 generateSerial("chart13", urls, graphs, "anno", true);
+
+
+/* Popolazione del centro storico di Treviso ai Censimenti
+ ----------------------------------------------------------------------------*/
+graphs = [
+    {
+        "id": "g1",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineThickness": 3,
+        "lineColor": "#969696",
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Popolazione",
+        "valueField": "Popolazione",
+        "useLineColorForBulletBorder": true,
+        "fillAlphas": 0.5
+    }
+];
+
+
+urls = [
+    dataPath + "censimenti_centro.json"
+];
+
+generateSerial("chart20", urls, graphs, "Anno", true);
 
 
 /* Andamento dei Nati e dei Morti
@@ -409,7 +434,7 @@ graphs = [
         "fillColors": "#66a61e",
         "fontSize": -4,
         "gapPeriod": 1,
-        "id": "AmGraph-1",
+        "id": "g1",
         "lineAlpha": 0,
         "negativeFillColors": "#e7298a",
         "valueField": "Saldo Naturale",
@@ -468,287 +493,115 @@ colors = ['#fde0dd', '#fcc5c0', '#fa9fb5', '#f768a1', '#dd3497', '#ae017e', '#7a
 generatePie("chart19", urls, "età", "matrimoni", colors);
 
 
-/*
-
- graphs = [
- {
- "id": "g1",
- "bullet": "round",
- "bulletBorderAlpha": 1,
- "lineColor": "#5ab4ac",
- "lineThickness": 3,
- "bulletColor": "#FFFFFF",
- "hideBulletsCount": 50,
- "title": "Nati",
- "valueField": "births",
- "useLineColorForBulletBorder": true
- },
- {
- "id": "g2",
- "bullet": "round",
- "bulletBorderAlpha": 1,
- "lineColor": "#d8b365",
- "lineThickness": 3,
- "bulletColor": "#FFFFFF",
- "hideBulletsCount": 50,
- "title": "Decessi",
- "valueField": "deaths",
- "useLineColorForBulletBorder": true
- }];
- generateSerial("birthsDeathsSerial", dataPath + "births-and-deaths.json", graphs, "year", true);
-
- // Migration trend
- graphs = [
- {
- "id": "g1",
- "bullet": "round",
- "bulletBorderAlpha": 1,
- "lineColor": "#ff7f00",
- "lineThickness": 2,
- "bulletColor": "#FFFFFF",
- "hideBulletsCount": 50,
- "title": "Immigranti",
- "valueField": "immigrants",
- "useLineColorForBulletBorder": true
- },
- {
- "id": "g2",
- "bullet": "round",
- "bulletBorderAlpha": 1,
- "lineColor": "#6a3d9a",
- "lineThickness": 2,
- "bulletColor": "#FFFFFF",
- "hideBulletsCount": 50,
- "title": "Emigranti",
- "valueField": "emigrants",
- "useLineColorForBulletBorder": true
- }];
- generateSerial("migrationTrendSerial", dataPath + "migration-trend.json", graphs, "year", true)
- // Population marital status
- generatePie("maritalStatusPie", dataPath + "marital-status.json", "status", "percentage",
- ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854"]);
-
- // Population ages
- graphs = [
- {
- "id": "g1",
- "balloonText": "Treviso: [[Treviso]]",
- "fillAlphas": 0.5,
- "fillColors": "#bebada",
- "lineColor": "#bebada",
- "valueField": "Treviso",
- "type": "column",
- "title": "Treviso"
- },
- {
- "id": "g2",
- "balloonText": "Veneto: [[Veneto]]",
- "fillAlphas": 0.5,
- "fillColors": "#fb8072",
- "lineColor": "#fb8072",
- "valueField": "Veneto",
- "type": "column",
- "title": "Veneto"
- },
- {
- "id": "g3",
- "balloonText": "Italia: [[Italia]]",
- "fillAlphas": 0.5,
- "lineColor": "#80b1d3",
- "fillColors": "#80b1d3",
- "valueField": "Italia",
- "type": "column",
- "title": "Italia"
- }
- ];
- generateSerial('agesSerial', dataPath + "population-ages.json", graphs, "age_slot");
+/* Immigrati nel Comune di Treviso per Stato di Provenienza
+ ----------------------------------------------------------------------------*/
+areasSettings = {
+    autoZoom: true
+};
+generateMap("chart21", dataPath + "mappa_immigrati_per_stato.json", areasSettings, "");
 
 
- // Number of family components
- graphs = [
- {
- "balloonText": "Centro Storico: [[centre]]",
- "fillAlphas": 0.5,
- "id": "g2",
- "lineColor": "#66c2a5",
- "fillColors": "#66c2a5",
- "valueField": "centre",
- "type": "column",
- "title": "Centro Storico"
- },
- {
- "balloonText": "Intero Comune: [[city]]",
- "fillAlphas": 0.5,
- "id": "g1",
- "lineColor": "#fc8d62",
- "fillColors": "#fc8d62",
- "valueField": "city",
- "type": "column",
- "title": "Intero Comune"
- }
-
- ];
- generateSerial("famComSerial", dataPath + "families-components.json", graphs, "components");
+/* Immigrati stranieri nel comune di Treviso divisi per quartiere
+ ----------------------------------------------------------------------------*/
+areasSettings = {
+    autoZoom: true,
+    rollOverOutlineColor: "#9a7bca",
+    selectedColor: "#9a7bca",
+    color: "#a791b4",
+    rollOverColor: "#9a7bca"
+};
+generateMap("chart22", dataPath + "mappa_immigrati_per_quartiere.json", areasSettings, "%");
 
 
- // Deaths per sex and age.
- graphs = [
- {
- "id": "g1",
- "balloonText": "[[value]] decessi",
- "fillAlphas": 0.5,
- "fillColors": '#a6bddb',
- "lineAlpha": 0.2,
- "title": "Maschi",
- "type": "column",
- "valueField": "male"
- },
- {
- "id": "g2",
- "balloonText": "[[value]] decessi",
- "fillAlphas": 0.5,
- "fillColors": '#fa9fb5',
- "lineAlpha": 0.2,
- "title": "Femmine",
- "type": "column",
- "valueField": "female"
- }
- ];
- generateSerial("deathsSexSerial", dataPath + "deaths-per-sex.json", graphs, "age");
+/* Indice di vecchiaia - Treviso - Veneto - Italia
+ ----------------------------------------------------------------------------*/
+graphs = [
+    {
+        "id": "g1",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineColor": "#e41a1c",
+        "lineThickness": 3,
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Treviso",
+        "valueField": "Treviso",
+        "useLineColorForBulletBorder": true
+    },
+    {
+        "id": "g2",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineColor": "#377eb8",
+        "lineThickness": 3,
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Veneto",
+        "valueField": "Veneto",
+        "useLineColorForBulletBorder": true
+    },
+    {
+        "id": "g3",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineColor": "#4daf4a",
+        "lineThickness": 3,
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Italia",
+        "valueField": "Italia",
+        "useLineColorForBulletBorder": true
+    }];
+
+urls = [
+    dataPath + "indice_di_vecchiaia.json"
+];
+
+generateSerial("chart23", urls, graphs, "Anno", true);
 
 
- // Marriages per age and sex
- generatePie("marriagesMPie", dataPath + "marriages-by-age-male.json", "age", "marriages",
- ["#a6bddb", "#a6bddb", "#74a9cf", "#3690c0", "#0570b0", "#045a8d", "#023858"]);
- generatePie("marriagesFPie", dataPath + "marriages-by-age-female.json", "age", "marriages",
- ["#fde0dd", "#fa9fb5", "#fa9fb5", "#f768a1", "#dd3497", "#ae017e", "#7a0177"]);
+/* Indice di Dipendenza - Treviso - Veneto - Italia
+ ----------------------------------------------------------------------------*/
+graphs = [
+    {
+        "id": "g1",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineColor": "#e41a1c",
+        "lineThickness": 3,
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Treviso",
+        "valueField": "Treviso",
+        "useLineColorForBulletBorder": true
+    },
+    {
+        "id": "g2",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineColor": "#377eb8",
+        "lineThickness": 3,
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Veneto",
+        "valueField": "Veneto",
+        "useLineColorForBulletBorder": true
+    },
+    {
+        "id": "g3",
+        "bullet": "round",
+        "bulletBorderAlpha": 1,
+        "lineColor": "#4daf4a",
+        "lineThickness": 3,
+        "bulletColor": "#FFFFFF",
+        "hideBulletsCount": 50,
+        "title": "Italia",
+        "valueField": "Italia",
+        "useLineColorForBulletBorder": true
+    }];
 
+urls = [
+    dataPath + "indice_di_dipendenza.json"
+];
 
- // Census
- graphs = [
- {
- "id": "g1",
- "balloonText": "Censimento [[year]]: [[value]]",
- "bullet": "round",
- "bulletBorderAlpha": 1,
- "lineThickness": 3,
- "lineColor": "#fc8d62",
- "hideBulletsCount": 50,
- "title": "Intero Comune",
- "valueField": "city",
- "useLineColorForBulletBorder": true
- },
- {
- "id": "g2",
- "balloonText": "Censimento [[year]]: [[value]]",
- "bullet": "round",
- "bulletBorderAlpha": 1,
- "lineThickness": 3,
- "lineColor": "#66c2a5",
- "hideBulletsCount": 50,
- "title": "Centro Storico",
- "valueField": "centre",
- "useLineColorForBulletBorder": true
- }];
- generateSerial("censusSerial", dataPath + "census.json", graphs, "year", true);
-
-
- // Foreign population pyramid
- graphs = [{
- "id": "g1",
- "fillAlphas": 0.5,
- "lineColor": "#a6bddb",
- "type": "column",
- "valueField": "male",
- "title": "Maschi",
- "labelText": "[[value]]",
- "clustered": false,
- "labelFunction": function (item) {
- return Math.abs(item.values.value);
- },
- "balloonFunction": function (item) {
- return item.category + ": " + Math.abs(item.values.value);
- }
- }, {
- "id": "g2",
- "fillAlphas": 0.5,
- "type": "column",
- "valueField": "female",
- "labelText": "[[value]]",
- "title": "Femmine",
- "lineColor": "#fa9fb5",
- "clustered": false,
- "labelFunction": function (item) {
- return Math.abs(item.values.value);
- },
- "balloonFunction": function (item) {
- return item.category + ": " + Math.abs(item.values.value);
- }
- }];
- generatePyramid("foreignPyramid", dataPath + "foreign-population-pyramid.json", graphs, "age");
-
-
- // Immigrants map by state
- generateMap("foreignStateMap", dataPath + "immigrants-by-state.json", "");
- generateMap("foreignAreaMap", dataPath + "immigrants-by-area.json", "%");
-
- $(window).scroll(function () {
- if ($(window).scrollTop() + $(window).height() >= $('.gauge').offset().top) {
- if (!$('.gauge').attr('loaded')) {
- $('.gauge').attr('loaded', true);
- $.getJSON(dataPath + "agedness-ratio.json", function (data) {
- var g1 = new JustGage({
- id: "g1",
- value: data.treviso,
- min: 0,
- max: 250,
- title: "Treviso"
- });
-
- var g2 = new JustGage({
- id: "g2",
- value: data.veneto,
- min: 0,
- max: 250,
- title: "Veneto"
- });
-
- var g3 = new JustGage({
- id: "g3",
- value: data.italia,
- min: 0,
- max: 250,
- title: "Italia"
- });
- });
- $.getJSON(dataPath + "dependency-ratio.json", function (data) {
- var g4 = new JustGage({
- id: "g4",
- value: data.treviso,
- min: 0,
- max: 100,
- title: "Treviso"
- });
-
- var g5 = new JustGage({
- id: "g5",
- value: data.veneto,
- min: 0,
- max: 100,
- title: "Veneto"
- });
-
- var g6 = new JustGage({
- id: "g6",
- value: data.italia,
- min: 0,
- max: 100,
- title: "Italia"
- });
-
- });
- }
- }
- });
- */
-
+generateSerial("chart24", urls, graphs, "Anno", true);

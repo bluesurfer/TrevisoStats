@@ -25,10 +25,9 @@ AmCharts.loadJSON = function (url) {
     request.open('GET', url, false);
     request.send();
 
-    // parse and return the output
-    return eval(request.responseText);
+    // parse adn return the output
+    return JSON.parse(request.responseText);
 };
-
 
 function handleRollOver(e) {
     var wedge = e.dataItem.wedge.node;
@@ -70,9 +69,20 @@ function generateSerial(chartDiv, urls, graphs, categoryField, zoomable) {
     if (zoomable === true) {
         chartCursor = {};
         chartScrollbar = {
-            "autoGridCount": true,
             "graph": "g1",
-            "scrollbarHeight": 40
+            "gridAlpha": 0,
+            "color": "#888888",
+            "scrollbarHeight": 55,
+            "backgroundAlpha": 0,
+            "selectedBackgroundAlpha": 0.1,
+            "selectedBackgroundColor": "#888888",
+            "graphFillAlpha": 0,
+            "autoGridCount": true,
+            "selectedGraphFillAlpha": 0,
+            "graphLineAlpha": 0.2,
+            "graphLineColor": "#c2c2c2",
+            "selectedGraphLineColor": "#888888",
+            "selectedGraphLineAlpha": 1
         }
     }
 
@@ -213,40 +223,38 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
 
     appendDataSelector(chart, chartDiv, urls);
 }
-/*
- function generateMap(chartDiv, url, unitName) {
- var map = AmCharts.makeChart(chartDiv, {
- "type": "map",
- "theme": "light",
- "colorSteps": 20,
- "balloon": {
- "adjustBorderColor": true,
- "color": "#000000",
- "cornerRadius": 5,
- "fillColor": "#FFFFFF"
- },
- valueLegend: {
- right: 300
- },
- "export": {
- "position": "bottom-right",
- "enabled": true
- },
- "dataLoader": {
- "url": url,
- "showErrors": false
- },
- balloonLabelFunction: function (mapObject, ammap) {
- return mapObject.title + ': ' + mapObject.value + unitName;
- },
- "responsive": {
- "enabled": true
- }
- });
 
- return map
- }
- */
+
+function generateMap(chartDiv, url, areasSettings, unitName) {
+    return AmCharts.makeChart(chartDiv, {
+        "type": "map",
+        "theme": "light",
+        "colorSteps": 20,
+        "balloon": {
+            "adjustBorderColor": true,
+            "color": "#000000",
+            "cornerRadius": 5,
+            "fillColor": "#FFFFFF"
+        },
+        areasSettings: areasSettings,
+        dataProvider: AmCharts.loadJSON(url),
+        valueLegend: {
+            right: 300
+        },
+        "export": {
+            "position": "bottom-right",
+            "enabled": true
+        },
+        balloonLabelFunction: function (mapObject, ammap) {
+            return mapObject.title + ': ' + mapObject.value + unitName;
+        },
+        "responsive": {
+            "enabled": true
+        }
+    });
+}
+
+
 function setDataSet(chart, dataset_url) {
     chart.dataProvider = AmCharts.loadJSON(dataset_url);
     chart.validateData();
