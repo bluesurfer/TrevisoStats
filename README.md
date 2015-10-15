@@ -1,5 +1,5 @@
 # TrevisoStats
 
-Statistics and metrics of Treviso.
+Statistics and city metrics of Treviso (Italy).
 
-See develop
+See it in action [here](http://trevisostats.herokuapp.com).
