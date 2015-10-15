@@ -8,7 +8,7 @@
     <title>Annuario Statistico</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" rel="stylesheet">
     <link href="http://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet">
 
@@ -25,6 +25,12 @@
 <body class="top-navigation">
 
 <div id="wrapper">
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
 
     <div id="page-wrapper" class="gray-bg">
 
@@ -438,12 +444,21 @@
             </div>
         </div>
     </div>
+
 </div>
+
 
 <!-- Mainly scripts -->
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('body').addClass('loaded');
+    });
+</script>
 
 <!-- AmCharts -->
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
