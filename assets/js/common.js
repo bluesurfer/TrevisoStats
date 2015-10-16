@@ -10,6 +10,38 @@ $(function () {
 });
 
 
+// save the real makeChart function for later
+AmCharts.lazyLoadMakeChart = AmCharts.makeChart;
+
+// override makeChart function
+AmCharts.makeChart = function (a, b, c, urls) {
+
+    // set scroll events
+    jQuery(document).on('scroll load touchmove', handleScroll);
+    jQuery(window).on('load', handleScroll);
+
+    function handleScroll() {
+        var $ = jQuery;
+        if (true === b.lazyLoaded)
+            return;
+        var hT = $('#' + a).offset().top,
+            hH = $('#' + a).outerHeight() / 2,
+            wH = $(window).height(),
+            wS = $(window).scrollTop();
+        if (wS > (hT + hH - wH)) {
+            b.lazyLoaded = true;
+            chart = AmCharts.lazyLoadMakeChart(a, b, c);
+            appendDataSelector(chart, a, urls);
+            return;
+        }
+    }
+
+    // Return fake listener to avoid errors
+    return {
+        addListener: function () {
+        }
+    };
+};
 
 function appendDataSelector(chart, chartDiv, urls) {
     if (urls.length > 1) {
@@ -62,7 +94,7 @@ function generateSerial(chartDiv, urls, graphs, categoryField, zoomable) {
         }
     }
 
-    var chart = AmCharts.makeChart(chartDiv, {
+    return AmCharts.makeChart(chartDiv, {
         "type": "serial",
         "theme": "light",
         "language": "it",
@@ -90,14 +122,12 @@ function generateSerial(chartDiv, urls, graphs, categoryField, zoomable) {
             "position": "bottom-right",
             "enabled": true
         }
-    });
-
-    appendDataSelector(chart, chartDiv, urls);
+    }, undefined, urls);
 }
 
 
 function generatePie(chartDiv, urls, titleField, valueField, colors) {
-    var pie = AmCharts.makeChart(chartDiv, {
+    return AmCharts.makeChart(chartDiv, {
         "type": "pie",
         "theme": "light",
         "startDuration": 0,
@@ -140,14 +170,12 @@ function generatePie(chartDiv, urls, titleField, valueField, colors) {
                 }
             }]
         }
-    });
-
-    appendDataSelector(pie, chartDiv, urls);
+    }, undefined, urls);
 }
 
 
 function generatePyramid(chartDiv, urls, graphs, categoryField) {
-    var chart = AmCharts.makeChart(chartDiv, {
+    return AmCharts.makeChart(chartDiv, {
         "type": "serial",
         "theme": "light",
         "rotate": true,
@@ -192,9 +220,7 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
         "responsive": {
             "enabled": true
         }
-    });
-
-    appendDataSelector(chart, chartDiv, urls);
+    }, undefined, urls);
 }
 
 
