@@ -10,6 +10,8 @@ $(function () {
 });
 
 
+
+
 // save the real makeChart function for later
 AmCharts.lazyLoadMakeChart = AmCharts.makeChart;
 
@@ -98,7 +100,7 @@ function generateSerial(chartDiv, urls, graphs, categoryField, zoomable) {
         "type": "serial",
         "theme": "light",
         "language": "it",
-        "startDuration": 0,
+        "startDuration": 0.5,
         "legend": {
             "markerLabelGap": 10,
             "useGraphSettings": true
@@ -130,7 +132,7 @@ function generatePie(chartDiv, urls, titleField, valueField, colors) {
     return AmCharts.makeChart(chartDiv, {
         "type": "pie",
         "theme": "light",
-        "startDuration": 0,
+        "startDuration": 0.5,
         "labelsEnabled": false,
         "dataLoader": {"url": urls[urls.length - 1]},
         "addClassNames": true,
@@ -141,7 +143,6 @@ function generatePie(chartDiv, urls, titleField, valueField, colors) {
             "position": "bottom",
             "autoMargins": true
         },
-
         "export": {
             "position": "bottom-right",
             "enabled": true
@@ -179,7 +180,7 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
         "type": "serial",
         "theme": "light",
         "rotate": true,
-        "startDuration": 0,
+        "startDuration": 0.5,
         "marginBottom": 50,
         "dataLoader": {"url": urls[urls.length - 1]},
         "legend": {
@@ -227,7 +228,7 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
 function generateMap(chartDiv, url, areasSettings, unitName) {
     return AmCharts.makeChart(chartDiv, {
         "type": "map",
-        "startDuration": 0,
+        "startDuration": 0.5,
         "dataLoader": {"url": url},
         "theme": "light",
         "colorSteps": 20,
