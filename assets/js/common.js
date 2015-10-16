@@ -9,30 +9,6 @@ $(function () {
     })
 });
 
-AmCharts.loadJSON = function (url) {
-    // create the request
-    if (window.XMLHttpRequest) {
-        // IE7+, Firefox, Chrome, Opera, Safari
-        var request = new XMLHttpRequest();
-    } else {
-        // code for IE6, IE5
-        var request = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-
-    // load it
-    // the last "false" parameter ensures that our code will wait before the
-    // data is loaded
-    request.open('GET', url, false);
-    request.send();
-
-    // parse adn return the output
-    return JSON.parse(request.responseText);
-};
-
-function handleRollOver(e) {
-    var wedge = e.dataItem.wedge.node;
-    wedge.parentNode.appendChild(wedge);
-}
 
 
 function appendDataSelector(chart, chartDiv, urls) {
@@ -90,12 +66,12 @@ function generateSerial(chartDiv, urls, graphs, categoryField, zoomable) {
         "type": "serial",
         "theme": "light",
         "language": "it",
-        "startDuration": 0.5,
+        "startDuration": 0,
         "legend": {
             "markerLabelGap": 10,
             "useGraphSettings": true
         },
-        "dataProvider": AmCharts.loadJSON(urls[urls.length - 1]),
+        "dataLoader": {"url": urls[urls.length - 1]},
         "valueAxes": [{
             "axisAlpha": 0.2,
             "dashLength": 1
@@ -124,8 +100,9 @@ function generatePie(chartDiv, urls, titleField, valueField, colors) {
     var pie = AmCharts.makeChart(chartDiv, {
         "type": "pie",
         "theme": "light",
+        "startDuration": 0,
         "labelsEnabled": false,
-        "dataProvider": AmCharts.loadJSON(urls[urls.length - 1]),
+        "dataLoader": {"url": urls[urls.length - 1]},
         "addClassNames": true,
         "colors": colors,
         "titleField": titleField,
@@ -165,10 +142,6 @@ function generatePie(chartDiv, urls, titleField, valueField, colors) {
         }
     });
 
-    pie.addListener("rollOverSlice", function (e) {
-        handleRollOver(e);
-    });
-
     appendDataSelector(pie, chartDiv, urls);
 }
 
@@ -178,9 +151,9 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
         "type": "serial",
         "theme": "light",
         "rotate": true,
-        "startDuration": 0.5,
+        "startDuration": 0,
         "marginBottom": 50,
-        "dataProvider": AmCharts.loadJSON(urls[urls.length - 1]),
+        "dataLoader": {"url": urls[urls.length - 1]},
         "legend": {
             "valueText": null,
             "position": "bottom",
@@ -228,6 +201,8 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
 function generateMap(chartDiv, url, areasSettings, unitName) {
     return AmCharts.makeChart(chartDiv, {
         "type": "map",
+        "startDuration": 0,
+        "dataLoader": {"url": url},
         "theme": "light",
         "colorSteps": 20,
         "balloon": {
@@ -237,7 +212,6 @@ function generateMap(chartDiv, url, areasSettings, unitName) {
             "fillColor": "#FFFFFF"
         },
         areasSettings: areasSettings,
-        dataProvider: AmCharts.loadJSON(url),
         valueLegend: {
             right: 300
         },
@@ -256,7 +230,7 @@ function generateMap(chartDiv, url, areasSettings, unitName) {
 
 
 function setDataSet(chart, dataset_url) {
-    chart.dataProvider = AmCharts.loadJSON(dataset_url);
-    chart.validateData();
-    chart.animateAgain();
+    chart.dataLoader.url = dataset_url;
+    chart.dataLoader.loadData();
+
 }
