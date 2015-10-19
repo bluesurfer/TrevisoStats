@@ -10,6 +10,35 @@ $(function () {
 });
 
 
+AmCharts.translations["export"]["it"] = {
+    "fallback.save.text": "CTRL + C per copiare i dati sulla clipboard.",
+    "fallback.save.image": "Click destro -> Salva immagine come... per salvare l'immagine.",
+
+    "capturing.delayed.menu.label": "{{duration}}",
+    "capturing.delayed.menu.title": "Clicca per cancellare",
+
+    "menu.label.print": "Stampa",
+    "menu.label.undo": "Annulla",
+    "menu.label.redo": "Ripeti",
+    "menu.label.cancel": "Cancella",
+
+    "menu.label.save.image": "Scarica come ...",
+    "menu.label.save.data": "Salva come ...",
+
+    "menu.label.draw": "Annota ...",
+    "menu.label.draw.change": "Cambia ...",
+    "menu.label.draw.add": "Aggiungi ...",
+    "menu.label.draw.shapes": "Forma ...",
+    "menu.label.draw.colors": "Colore ...",
+    "menu.label.draw.widths": "Dimensione ...",
+    "menu.label.draw.opacities": "Opacità ...",
+    "menu.label.draw.text": "Testo",
+
+    "menu.label.draw.modes": "Modalità ...",
+    "menu.label.draw.modes.pencil": "Penna",
+    "menu.label.draw.modes.line": "Linea",
+    "menu.label.draw.modes.arrow": "Freccia"
+};
 
 
 // save the real makeChart function for later
@@ -132,6 +161,7 @@ function generatePie(chartDiv, urls, titleField, valueField, colors) {
     return AmCharts.makeChart(chartDiv, {
         "type": "pie",
         "theme": "light",
+        "language": "it",
         "startDuration": 0.5,
         "labelsEnabled": false,
         "dataLoader": {"url": urls[urls.length - 1]},
@@ -179,6 +209,7 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
     return AmCharts.makeChart(chartDiv, {
         "type": "serial",
         "theme": "light",
+        "language": "it",
         "rotate": true,
         "startDuration": 0.5,
         "marginBottom": 50,
@@ -225,11 +256,12 @@ function generatePyramid(chartDiv, urls, graphs, categoryField) {
 }
 
 
-function generateMap(chartDiv, url, areasSettings, unitName) {
+function generateMap(chartDiv, urls, areasSettings, unitName) {
     return AmCharts.makeChart(chartDiv, {
         "type": "map",
+        "language": "it",
         "startDuration": 0.5,
-        "dataLoader": {"url": url},
+        "dataLoader": {"url": urls[urls.length - 1]},
         "theme": "light",
         "colorSteps": 20,
         "balloon": {
@@ -243,8 +275,20 @@ function generateMap(chartDiv, url, areasSettings, unitName) {
             right: 300
         },
         "export": {
+            "enabled": true,
             "position": "bottom-right",
-            "enabled": true
+            "libs": {
+                "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
+            },
+            "menu": [{
+
+                class: "export-main",
+                label: "Export",
+                menu: [{
+                    format: "XLSX",
+                    label: "Default"
+                }]
+            }]
         },
         balloonLabelFunction: function (mapObject, ammap) {
             return mapObject.title + ': ' + mapObject.value + unitName;
@@ -252,7 +296,7 @@ function generateMap(chartDiv, url, areasSettings, unitName) {
         "responsive": {
             "enabled": true
         }
-    });
+    }, undefined, urls);
 }
 
 

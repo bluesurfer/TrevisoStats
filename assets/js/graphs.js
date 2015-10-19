@@ -495,10 +495,7 @@ generatePie("chart19", urls, "età", "matrimoni", colors);
 
 /* Immigrati nel Comune di Treviso per Stato di Provenienza
  ----------------------------------------------------------------------------*/
-areasSettings = {
-    autoZoom: true
-};
-generateMap("chart21", dataPath + "mappa_immigrati_per_stato.json", areasSettings, "");
+generateMap("chart21", [dataPath + "mappa_immigrati_per_stato.json"], {}, "");
 
 
 /* Immigrati stranieri nel comune di Treviso divisi per quartiere
@@ -510,7 +507,7 @@ areasSettings = {
     color: "#a791b4",
     rollOverColor: "#9a7bca"
 };
-generateMap("chart22", dataPath + "mappa_immigrati_per_quartiere.json", areasSettings, "%");
+generateMap("chart22", [dataPath + "mappa_immigrati_per_quartiere.json"], areasSettings, "%");
 
 
 /* Indice di vecchiaia - Treviso - Veneto - Italia

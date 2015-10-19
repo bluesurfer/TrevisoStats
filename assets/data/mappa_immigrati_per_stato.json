@@ -1,5 +1,8 @@
 {
   "map": "worldHigh",
+  "zoomLevel": 2.5,
+  "zoomLongitude": 55,
+  "zoomLatitude": 42,
   "areas": [
     {
       "title": "Albania",
