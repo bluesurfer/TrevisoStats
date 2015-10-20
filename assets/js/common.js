@@ -277,18 +277,6 @@ function generateMap(chartDiv, urls, areasSettings, unitName) {
         "export": {
             "enabled": true,
             "position": "bottom-right",
-            "libs": {
-                "path": "http://www.amcharts.com/lib/3/plugins/export/libs/"
-            },
-            "menu": [{
-
-                class: "export-main",
-                label: "Export",
-                menu: [{
-                    format: "XLSX",
-                    label: "Default"
-                }]
-            }]
         },
         balloonLabelFunction: function (mapObject, ammap) {
             return mapObject.title + ': ' + mapObject.value + unitName;
