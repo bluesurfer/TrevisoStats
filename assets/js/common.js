@@ -277,6 +277,47 @@ function generateMap(chartDiv, urls, areasSettings, unitName) {
         "export": {
             "enabled": true,
             "position": "bottom-right",
+            "menu": [{
+                "class": "export-main",
+                menu: [{
+                    label: "Scarica come ...",
+                    menu: ["PNG", "JPG", "SVG", "PDF"]
+                }, {
+                    label: "Salva come ...",
+                    menu: [
+                        "CSV",
+                        {
+                            "label": "CSV",
+                            click: function () {
+                                var data = this.setup.chart.dataProvider;
+                                this.toCSV({
+                                    data: getMapDataArray(data)
+                                }, function (data) {
+                                    this.download(data, this.defaults.formats.CSV.mimeType, 'AmCharts.csv');
+                                });
+                            }
+                        },
+                        "XLSX",
+                        {
+                            "label": "XLSX",
+                            click: function () {
+                                var data = this.setup.chart.dataProvider;
+                                this.toXLSX({
+                                    data: getMapDataArray(data)
+                                }, function (data) {
+                                    this.download(data, this.defaults.formats.CSV.mimeType, 'AmCharts.xlsx');
+                                });
+                            }
+                        }
+                    ]
+                }, {
+                    label: "Annota ...",
+                    action: "draw"
+                }, {
+                    format: "PRINT",
+                    label: "Stampa"
+                }]
+            }]
         },
         balloonLabelFunction: function (mapObject, ammap) {
             return mapObject.title + ': ' + mapObject.value + unitName;
@@ -292,4 +333,16 @@ function setDataSet(chart, dataset_url) {
     chart.dataLoader.url = dataset_url;
     chart.dataLoader.loadData();
 
+}
+
+
+function getMapDataArray(data) {
+    var lenAreas = data.areas.length;
+    var objs = new Array(lenAreas);
+    for (i = 0; i < lenAreas; i++) {
+        var title = data.areas[i].title;
+        var value = data.areas[i].value;
+        objs[i] = {"title": title, "value": value};
+    }
+    return objs;
 }

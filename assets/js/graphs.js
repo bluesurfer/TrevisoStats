@@ -437,6 +437,7 @@ graphs = [
         "id": "g1",
         "lineAlpha": 0,
         "negativeFillColors": "#e7298a",
+        "title": "Saldo Naturale",
         "valueField": "Saldo Naturale",
         "type": "column"
     }
@@ -453,7 +454,7 @@ generateSerial('chart16', urls, graphs, "Anno", true);
  ----------------------------------------------------------------------------*/
 graphs = [
     {
-        "balloonText": "Saldo: [[Saldo Migratorio]]",
+        "balloonText": "Saldo: [[Saldo migratorio]]",
         "fillAlphas": 0.6,
         "fillColors": "#1b9e77",
         "fontSize": -4,
@@ -461,6 +462,7 @@ graphs = [
         "id": "g1",
         "lineAlpha": 0,
         "negativeFillColors": "#d95f02",
+        "title": "Saldo migratorio",
         "valueField": "Saldo migratorio",
         "type": "column"
     }
