@@ -354,7 +354,7 @@ function getMapDataArray(data) {
     for (i = 0; i < lenAreas; i++) {
         var title = data.areas[i].title;
         var value = data.areas[i].value;
-        var id = data.areas[i].value;
+        var id = data.areas[i].id;
         objs[i] = {
             "id": id,
             "title": title,
