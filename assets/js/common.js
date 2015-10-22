@@ -305,7 +305,19 @@ function generateMap(chartDiv, urls, areasSettings, unitName) {
                                 this.toXLSX({
                                     data: getMapDataArray(data)
                                 }, function (data) {
-                                    this.download(data, this.defaults.formats.CSV.mimeType, 'AmCharts.xlsx');
+                                    this.download(data, this.defaults.formats.XLSX.mimeType, 'AmCharts.xlsx');
+                                });
+                            }
+                        },
+                        "JSON",
+                        {
+                            "label": "JSON",
+                            click: function () {
+                                var data = this.setup.chart.dataProvider;
+                                this.toJSON({
+                                    data: getMapDataArray(data)
+                                }, function (data) {
+                                    this.download(data, this.defaults.formats.JSON.mimeType, 'AmCharts.json');
                                 });
                             }
                         }
@@ -342,7 +354,12 @@ function getMapDataArray(data) {
     for (i = 0; i < lenAreas; i++) {
         var title = data.areas[i].title;
         var value = data.areas[i].value;
-        objs[i] = {"title": title, "value": value};
+        var id = data.areas[i].value;
+        objs[i] = {
+            "id": id,
+            "title": title,
+            "value": value
+        };
     }
     return objs;
 }
